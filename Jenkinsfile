@@ -13,7 +13,7 @@ pipeline {
             }
         }
         stage('Feploy in Staging Environment') {
-            nuild_job: 'Deploy_Application_Staging'
-        }
+            build_job: 'Deploy_Application_Staging'
+       }
     }
 }
