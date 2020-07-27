@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('Build Application') {
+        stage('Build Application'){
             steps {
                 sh 'mvn -f ./pom.xml clean package'
             }
@@ -18,9 +18,9 @@ pipeline {
 
             }
         }
-        Stage('Deploy in Production') {
+        Stage('Deploy in Production'){
             steps{
-                timeout(time: 5, unit:'DAYS'){
+                timeout(time:5, unit:'DAYS'){
                     input message:'Approve production deployment?'
                 }
                 build_job: 'Deploy_Application_Prod'
